@@ -1,0 +1,20 @@
+>> Writing PID to tmp/pids/thin.9998.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9998, CTRL+C to stop
+127.0.0.1 - - [15/Jun/2013 22:33:30] "GET / HTTP/1.1" 200 22 0.0037
+127.0.0.1 - - [15/Jun/2013 22:33:30] "GET /favicon.ico HTTP/1.1" 404 18 0.0012
+>> Waiting for 1 connection(s) to finish, can take up to 30 sec, CTRL+C to stop now
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9998.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9998, CTRL+C to stop
+127.0.0.1 - - [15/Jun/2013 22:35:15] "GET / HTTP/1.1" 200 22 0.0035
+127.0.0.1 - - [15/Jun/2013 22:35:15] "GET /favicon.ico HTTP/1.1" 404 18 0.0008
+127.0.0.1 - - [15/Jun/2013 22:35:17] "GET / HTTP/1.1" 200 22 0.0103
+127.0.0.1 - - [15/Jun/2013 22:35:17] "GET /favicon.ico HTTP/1.1" 404 18 0.0009
+>> Waiting for 1 connection(s) to finish, can take up to 30 sec, CTRL+C to stop now
+>> Exiting!

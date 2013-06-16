@@ -1,0 +1,12 @@
+source 'https://rubygems.org'
+
+gem 'sinatra'
+gem 'sinatra-formhelpers'
+gem 'sinatra-simple-auth'
+gem 'sucker_punch'
+gem 'fssm'
+gem 'thin'
+gem 'rspec'
+gem 'log4r'
+gem 'rake'
+gem 'sys-proctable'

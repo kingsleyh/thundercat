@@ -1,0 +1,31 @@
+require 'rake'
+
+namespace :thin do
+
+  desc "Start The Application"
+  task :start do
+    puts "Restarting The Application..."
+    system("thin start -e production -p 9998 -s 2 -d")
+  end
+
+  desc "Stop The Application"
+  task :stop do
+    puts "Stopping The Application..."
+    Dir.new(File.dirname(__FILE__) + '/tmp/pids').each do |file|
+      prefix = file.to_s
+      if prefix[0, 4] == 'thin'
+        str = "thin stop -P#{File.dirname(__FILE__)}/tmp/pids/#{file}"
+        puts "Stopping server on port #{file[/\d+/]}..."
+        system(str)
+      end
+    end
+  end
+
+  desc "Restart The Application"
+  task :restart do
+    puts "Restarting The Application..."
+    Rake::Task["thin:stop"].execute
+    Rake::Task["thin:start"].execute
+  end
+
+end
