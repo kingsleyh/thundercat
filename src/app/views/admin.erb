@@ -9,45 +9,51 @@
 </div>
 
 <div>
-  <%=  @webapps.inspect %>
+  <%= @webapps.inspect %>
 </div>
 
 <div>
   <table border=1>
     <tr>
-    <th>Application</th>
-    <th>Server Type</th>
-    <th>Status</th>
-    <th>Actions</th>
+      <th>Application</th>
+      <th>Server Type</th>
+      <th>Directory</th>
+      <th>Status</th>
+      <th>Actions</th>
     </tr>
     <% @webapps.each do |webapp| %>
-    <tr>
-    <td>name</td>
-    <td>
-      <%= webapp[:server_type] %>
-    </td>
-    <td>
-      <table>
         <tr>
-        <th>Pid</th>
-        <th>Port</th>
-        <th>Start Time</th>
+          <td><%= webapp[:name] %></td>
+          <td>
+            <%= webapp[:server_type] %>
+          </td>
+          <td><%= webapp[:webapp] %></td>
+          <td>
+            <% if webapp[:pid_data].empty? %>
+                <p>Stopped</p>
+            <% else %>
+                <table border=1>
+                  <tr>
+                    <th>Pid</th>
+                    <th>Port</th>
+                    <th>Start Time</th>
+                  </tr>
+                  <% webapp[:pid_data].each do |pid| %>
+                      <tr>
+                        <td><%= pid[:pid] %></td>
+                        <td><%= pid[:port] %></td>
+                        <td><%= pid[:start_time] %></td>
+                      </tr>
+                  <% end %>
+                </table>
+            <% end %>
+          </td>
+          <td>
+            <a href="#">stop</a>
+            <a href="#">start</a>
+            <a href="#">remove</a>
+          </td>
         </tr>
-        <% webapp[:pid_data].each do |pid| %>
-          <tr>
-            <td><%= pid[:pid] %></td>
-            <td><%= pid[:port] %></td>
-            <td><%= pid[:start_time] %></td>
-          </tr>
-        <% end %>
-      </table>
-    </td>
-    <td>
-      <a href="#">stop</a>
-      <a href="#">start</a>
-      <a href="#">remove</a>
-    </td>
-    </tr>
     <% end %>
   </table>
 </div>

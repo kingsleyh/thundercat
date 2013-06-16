@@ -16,7 +16,7 @@ class WebAppStatus
   def get_status(rap_data)
     webapps = []
     rap_data.each do |data|
-      pids = data[:pids]
+      pids = @webapps_path + data[:webapp] + '/' + data[:pids]
       webapps << PidInfo.new(pids).discover.merge(data)
     end
     webapps
@@ -31,7 +31,8 @@ class WebAppStatus
           contents = Dir.entries(@webapps_path + entry)
           #p contents
           if contents.include?('rap.yml')
-            webapps << YAML::load_file(@webapps_path + entry + '/rap.yml')
+            data = {:webapp => entry}
+            webapps << data.merge(YAML::load_file(@webapps_path + entry + '/rap.yml'))
           end
         end
       end

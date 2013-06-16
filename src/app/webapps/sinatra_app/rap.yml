@@ -2,4 +2,4 @@
 :server_type: thin
 :start_script: ./start.sh
 :stop_script: ./stop.sh
-:pids: ../tmp/pids
+:pids: tmp/pids
