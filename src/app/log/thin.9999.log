@@ -196,3 +196,8 @@
 >> Maximum connections set to 1024
 >> Listening on 0.0.0.0:9999, CTRL+C to stop
 >> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop

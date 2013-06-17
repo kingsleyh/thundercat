@@ -49,9 +49,12 @@
             <% end %>
           </td>
           <td>
-            <a href="#">stop</a>
-            <a href="#">start</a>
             <a href="#">remove</a>
+            <% if webapp[:pid_data].empty? %>
+                <a href="/services/start/<%= webapp[:id] %>">start</a>
+            <% else %>
+                <a href="/services/stop/<%= webapp[:id] %>">stop</a>
+            <% end %>
           </td>
         </tr>
     <% end %>

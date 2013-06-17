@@ -1025,3 +1025,8 @@ TypeError - can't convert Array into String:
 127.0.0.1 - - [16/Jun/2013 23:41:26] "GET /admin HTTP/1.1" 200 872 0.0047
 >> Waiting for 1 connection(s) to finish, can take up to 30 sec, CTRL+C to stop now
 >> Exiting!
+>> Writing PID to tmp/pids/thin.9998.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9998, CTRL+C to stop

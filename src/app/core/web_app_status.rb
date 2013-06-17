@@ -23,6 +23,7 @@ class WebAppStatus
   end
 
   def find_rap_data
+    counter = 0
     webapps = []
     if File.exists?(@webapps_path)
       Dir.entries(@webapps_path).each do |entry|
@@ -31,8 +32,9 @@ class WebAppStatus
           contents = Dir.entries(@webapps_path + entry)
           #p contents
           if contents.include?('rap.yml')
-            data = {:webapp => entry}
+            data = {:webapp => entry, :location => @webapps_path + entry, :id => counter}
             webapps << data.merge(YAML::load_file(@webapps_path + entry + '/rap.yml'))
+            counter+=1
           end
         end
       end

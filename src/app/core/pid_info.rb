@@ -18,8 +18,6 @@ class PidInfo
     pids = []
     if File.exists?(@pid_path)
       Dir.entries(@pid_path).each do |entry|
-        p 'what: ' + entry.to_s
-        p 'what: ' + @pid_path
         extension = File.extname(File.basename(entry))
         if extension == '.pid'
           pids << File.read(@pid_path + '/' + entry)
