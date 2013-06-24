@@ -1,0 +1,1 @@
+./monitor.rb -P ./log/monitor.pid -d -l ./log/monitor.log

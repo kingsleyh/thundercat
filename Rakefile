@@ -1,4 +1,23 @@
 require 'rake'
+require 'jeweler'
+
+Jeweler::Tasks.new do |gem|
+
+  gem.name        = 'thundercat'
+  gem.homepage    = 'https://github.com/masterthought/thundercat'
+  gem.license     = 'Apache 2.0'
+  gem.email       = 'kingsley@masterthought.net'
+  gem.authors     = ['Kingsley Hendrickse']
+
+  gem.summary     = %Q{Thundercat Rack deployment and monitoring}
+  gem.description = <<-EOF
+Easy way to deploy and monitor Rack applications as .rap archives
+  EOF
+
+  gem.executables = ['/thundercat']
+  gem.files = Dir.glob('src/app/**/*')
+end
+Jeweler::RubygemsDotOrgTasks.new
 
 namespace :thin do
 
