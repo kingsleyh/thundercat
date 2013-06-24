@@ -1,0 +1,204 @@
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Exiting!
+/Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:27:in `open': No such file or directory - ../webapps/ (Errno::ENOENT)
+	from /Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:27:in `entries'
+	from /Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:27:in `find_rap_data'
+	from /Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:11:in `discover'
+	from /Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:47:in `<top (required)>'
+	from /Users/kings/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /Users/kings/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /Users/kings/development/projects/thundercat/src/app/thundercat_app.rb:5:in `<top (required)>'
+	from /Users/kings/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /Users/kings/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /Users/kings/development/projects/thundercat/src/app/config.ru:1:in `block in <main>'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.5.2/lib/rack/builder.rb:55:in `instance_eval'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.5.2/lib/rack/builder.rb:55:in `initialize'
+	from /Users/kings/development/projects/thundercat/src/app/config.ru:1:in `new'
+	from /Users/kings/development/projects/thundercat/src/app/config.ru:1:in `<main>'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/rack/adapter/loader.rb:33:in `eval'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/rack/adapter/loader.rb:33:in `load'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/rack/adapter/loader.rb:42:in `for'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/thin/controllers/controller.rb:169:in `load_adapter'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/thin/controllers/controller.rb:73:in `start'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/thin/runner.rb:187:in `run_command'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/thin/runner.rb:152:in `run!'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/bin/thin:6:in `<top (required)>'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/bin/thin:23:in `load'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/bin/thin:23:in `<main>'
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Exiting!
+/Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:27:in `open': No such file or directory - ../webapps/ (Errno::ENOENT)
+	from /Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:27:in `entries'
+	from /Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:27:in `find_rap_data'
+	from /Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:11:in `discover'
+	from /Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:47:in `<top (required)>'
+	from /Users/kings/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /Users/kings/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /Users/kings/development/projects/thundercat/src/app/thundercat_app.rb:5:in `<top (required)>'
+	from /Users/kings/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /Users/kings/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /Users/kings/development/projects/thundercat/src/app/config.ru:1:in `block in <main>'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.5.2/lib/rack/builder.rb:55:in `instance_eval'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.5.2/lib/rack/builder.rb:55:in `initialize'
+	from /Users/kings/development/projects/thundercat/src/app/config.ru:1:in `new'
+	from /Users/kings/development/projects/thundercat/src/app/config.ru:1:in `<main>'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/rack/adapter/loader.rb:33:in `eval'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/rack/adapter/loader.rb:33:in `load'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/rack/adapter/loader.rb:42:in `for'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/thin/controllers/controller.rb:169:in `load_adapter'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/thin/controllers/controller.rb:73:in `start'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/thin/runner.rb:187:in `run_command'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/thin/runner.rb:152:in `run!'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/bin/thin:6:in `<top (required)>'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/bin/thin:23:in `load'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/bin/thin:23:in `<main>'
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Exiting!
+/Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:27:in `open': No such file or directory - ../webapps/ (Errno::ENOENT)
+	from /Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:27:in `entries'
+	from /Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:27:in `find_rap_data'
+	from /Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:11:in `discover'
+	from /Users/kings/development/projects/thundercat/src/app/core/web_app_status.rb:47:in `<top (required)>'
+	from /Users/kings/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /Users/kings/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /Users/kings/development/projects/thundercat/src/app/thundercat_app.rb:5:in `<top (required)>'
+	from /Users/kings/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /Users/kings/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require'
+	from /Users/kings/development/projects/thundercat/src/app/config.ru:1:in `block in <main>'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.5.2/lib/rack/builder.rb:55:in `instance_eval'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/rack-1.5.2/lib/rack/builder.rb:55:in `initialize'
+	from /Users/kings/development/projects/thundercat/src/app/config.ru:1:in `new'
+	from /Users/kings/development/projects/thundercat/src/app/config.ru:1:in `<main>'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/rack/adapter/loader.rb:33:in `eval'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/rack/adapter/loader.rb:33:in `load'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/rack/adapter/loader.rb:42:in `for'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/thin/controllers/controller.rb:169:in `load_adapter'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/thin/controllers/controller.rb:73:in `start'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/thin/runner.rb:187:in `run_command'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/lib/thin/runner.rb:152:in `run!'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/gems/thin-1.5.1/bin/thin:6:in `<top (required)>'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/bin/thin:23:in `load'
+	from /Users/kings/.rvm/gems/ruby-1.9.3-p194/bin/thin:23:in `<main>'
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!
+>> Writing PID to tmp/pids/thin.9999.pid
+>> Using rack adapter
+>> Thin web server (v1.5.1 codename Straight Razor)
+>> Maximum connections set to 1024
+>> Listening on 0.0.0.0:9999, CTRL+C to stop
+>> Exiting!

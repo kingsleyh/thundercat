@@ -1,0 +1,6 @@
+:name: 'ThunderCat'
+:server_type: thin
+:start_script: start.sh
+:stop_script: stop.sh
+:pids: tmp/pids
+:description: 'Thunder App'
