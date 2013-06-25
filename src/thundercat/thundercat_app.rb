@@ -51,6 +51,6 @@ end
 private
 
 def discover_webapps
-  webapps_path = File.dirname(__FILE__) + '/webapps/'
+  webapps_path = File.dirname(__FILE__) + '/../'
   WebAppStatus.new(webapps_path).discover
 end
