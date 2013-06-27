@@ -1,63 +1,159 @@
-<h1>Admin Page</h1>
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta content='initial-scale=1.0, user-scalable=no' name='viewport'>
+  <title>ThunderCat - Admin</title>
+  <link href="//get.pictos.cc/fonts/3462/2" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="stylesheets/application.css" media="screen" rel="stylesheet" type="text/css"/>
+  <script src="javascripts/application.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+  <![endif]-->
+</head>
+<body>
+<div id='wrapper'>
+  <header id='header'>
+    <div class='inner-header'>
+          <span class='pull-left'>
+            <a class='button button-dark icon-only' data-icon='-' data-toggle='navigation' href='#'></a>
+          </span>
 
-<div>
-  <a href="/logout">Logout</a>
-</div>
+      <h1 id='logo'>
+        <a class='fastbutton' href='/'>ThunderCat</a>
+      </h1>
+      <nav id='primary'>
+        <ul>
+          <li class='active'>
+            <a data-icon='b' href='/admin'>Administration</a>
+          </li>
+        </ul>
+      </nav>
+      <div class='pull-right'>
 
-<div>
-  <p>Number of Applications: <%= @webapps.size %></p>
-</div>
-
-<div>
-  <%= @webapps.inspect %>
-</div>
-
-<div>
-  <table border=1>
-    <tr>
-      <th>Application</th>
-      <th>Server Type</th>
-      <th>Directory</th>
-      <th>Status</th>
-      <th>Actions</th>
-    </tr>
-    <% @webapps.each do |webapp| %>
-        <tr>
-          <td><%= webapp[:name] %></td>
-          <td>
-            <%= webapp[:server_type] %>
-          </td>
-          <td><%= webapp[:webapp] %></td>
-          <td>
-            <% if webapp[:pid_data].empty? %>
-                <p>Stopped</p>
-            <% else %>
-                <table border=1>
-                  <tr>
-                    <th>Pid</th>
-                    <th>Port</th>
-                    <th>Start Time</th>
-                  </tr>
-                  <% webapp[:pid_data].each do |pid| %>
-                      <tr>
-                        <td><%= pid[:pid] %></td>
-                        <td><%= pid[:port] %></td>
-                        <td><%= pid[:start_time] %></td>
-                      </tr>
-                  <% end %>
-                </table>
-            <% end %>
-          </td>
-          <td>
-            <a href="#">remove</a>
-            <% if webapp[:pid_data].empty? %>
-                <a href="/services/start/<%= webapp[:id] %>">start</a>
-            <% else %>
-                <a href="/services/stop/<%= webapp[:id] %>">stop</a>
-            <% end %>
-          </td>
-        </tr>
+        <div class='button-well button-well-dark'>
+          <div class='button-group'>
+            <a class='button button-dark' data-icon='e' href='#'>Refresh</a>
+            <a class='button button-dark icon-only' data-icon='Q' href='/logout'></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <aside id='notifications'>
+    <% if flash[:notice] %>
+        <% danger = flash[:notice].match(/ERROR/) ? 'danger' : ''%>
+        <div class='notification <%= danger %>'>
+          <i class='icon-only' data-icon='v '></i>
+          <%= flash[:notice] %>
+          <a class='icon-only' data-dismiss='notification' data-icon='x' href='#'></a>
+        </div>
     <% end %>
-  </table>
+  </aside>
+  <section id='main'>
+    <nav class='submenu' id='secondary'>
+      <ul>
+        <li class='active'>
+          <a data-icon='l' href='/admin'>Apps</a>
+        </li>
+      </ul>
+    </nav>
+    <section id='content'>
+      <div class='well'>
+        <h1>Apps</h1>
+
+        <form method="POST" action="/upload" enctype="multipart/form-data">
+          <table class='table'>
+            <tr>
+              <td>
+                <label>Number of Applications</label>
+              </td>
+              <td>
+                <%= @webapps.size %>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>Upload rap archive</label>
+              </td>
+              <td>
+                <input data-customfile type='file' name='rapfile'>
+              </td>
+              <td>
+                <input class='button button-small button-plain' type="submit" value="Upload">
+              </td>
+            </tr>
+          </table>
+        </form>
+        <br/>
+
+      </div>
+      <div class='tab-content active' id='footable'>
+        <div class='table-container'>
+
+          <table class='table footable'>
+            <thead>
+            <tr>
+              <th>Application</th>
+              <th>Server Type</th>
+              <th>Directory</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+            </thead>
+            <% @webapps.each do |webapp| %>
+                <tbody>
+                <tr>
+                  <td><%= webapp[:name] %></td>
+                  <td>
+                    <%= webapp[:server_type] %>
+                  </td>
+                  <td><%= webapp[:webapp] %></td>
+                  <td>
+                    <% if webapp[:pid_data].empty? %>
+                        <p style="padding:5px;background-color:plum;">Stopped</p>
+                    <% else %>
+                        <table class='table'>
+                          <tr>
+                            <th>Pid</th>
+                            <th>Port</th>
+                            <th>Start Time</th>
+                          </tr>
+                          <% webapp[:pid_data].each do |pid| %>
+                              <tr style="background-color:lightgreen">
+                                <td><%= pid[:pid] %></td>
+                                <td><a href="http://localhost:<%= pid[:port] %>"><%= pid[:port] %></a></td>
+                                <td><%= pid[:start_time] %></td>
+                              </tr>
+                          <% end %>
+                        </table>
+                    <% end %>
+                  </td>
+                  <% if webapp[:name] == 'ThunderCat' %>
+                      <td></td>
+                  <% else %>
+                      <td>
+                        <% if webapp[:pid_data].empty? %>
+                            <a class='button button-small button-danger' href="/services/remove/<%= webapp[:id] %>">remove</a>
+                            <a class='button button-small button-primary' href="/services/start/<%= webapp[:id] %>">start</a>
+                        <% else %>
+                            <a class='button button-small button-primary' href="/services/stop/<%= webapp[:id] %>">stop</a>
+                        <% end %>
+                      </td>
+                  <% end %>
+                </tr>
+            <% end %>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+    </section>
+    <!--<a href='http://www.denkgroot.com' id='denkgroot' target='_blank'>an idea by denkGroot</a>-->
+  </section>
 </div>
+</body>
+</html>
+
 

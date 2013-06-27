@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
+/* line 4, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/epiceditor/editor.css.sass */
+body {
+  background: url(../../images/input_bg.png) repeat-x #fdfdfd;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #cccccc;
+  color: #444444;
+  font-family: "Ubuntu Mono";
+  font-size: 15px;
+  margin: 0;
+  padding: 12px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: border 0.25s ease-out;
+  -moz-transition: border 0.25s ease-out;
+  -o-transition: border 0.25s ease-out;
+  transition: border 0.25s ease-out; }
+
+/* line 17, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/epiceditor/editor.css.sass */
+body:focus {
+  border: 1px solid #81b0ef;
+  color: #444444; }

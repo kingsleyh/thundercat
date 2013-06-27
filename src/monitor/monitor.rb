@@ -15,6 +15,15 @@ class Decision
     end
   end
 
+  def initial(webapps_dir)
+    Dir.entries(webapps_dir).each do |entry|
+      if entry.match(/.rap$/)
+        decide(:create, webapps_dir, entry, 'file')
+      end
+    end
+
+  end
+
   def deploy_rap(rap_file, rap_dir, base)
     Rappa.new(:input_archive => rap_file, :output_archive => base).expand
     rap_config = rap_dir + '/rap.yml'
@@ -80,10 +89,12 @@ class Monitor
 
   def self.go
     begin
-      FSSM.monitor(File.dirname(__FILE__) + '/webapps', '**/*.rap', :directories => true) do
-        update { |base, relative, type| p "updated #{base}, #{relative}, #{type}" }
-        delete { |base, relative, type| p "delete #{base}, #{relative}, #{type}" }
-        create { |base, relative, type| p "create #{base}, #{relative}, #{type}"; Decision.new.decide(:create, base, relative, type) }
+      webapps_dir = File.dirname(__FILE__) + '/webapps'
+      Decision.new.initial(webapps_dir)
+      FSSM.monitor(webapps_dir, '**/*.rap', :directories => true) do
+        update { |base, relative, type| puts "updated #{base}, #{relative}, #{type}" }
+        delete { |base, relative, type| puts  "delete #{base}, #{relative}, #{type}" }
+        create { |base, relative, type| Decision.new.decide(:create, base, relative, type) }
       end
     rescue => e
       puts "[ThunderCat] Monitor encountered an error: #{e}"

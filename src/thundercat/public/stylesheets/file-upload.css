@@ -1,0 +1,48 @@
+/* line 4, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/file-upload.css.sass */
+#uploads {
+  display: inline-block;
+  margin-left: 20px; }
+  /* line 8, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/file-upload.css.sass */
+  #uploads .upload {
+    display: inline-block;
+    margin-right: 20px;
+    position: relative; }
+  /* line 13, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/file-upload.css.sass */
+  #uploads .upload-cloud {
+    height: 20px;
+    position: absolute;
+    width: 29px; }
+  /* line 18, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/file-upload.css.sass */
+  #uploads .upload-cloud-processing {
+    background: url(../images/upload_cloud.png);
+    display: block;
+    height: 50%;
+    position: absolute;
+    width: 100%; }
+  /* line 25, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/file-upload.css.sass */
+  #uploads .upload-cloud-done {
+    background: url(../images/upload_cloud_done.png);
+    display: block;
+    height: 100%;
+    position: absolute;
+    width: 100%; }
+  /* line 32, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/file-upload.css.sass */
+  #uploads .filename {
+    color: #666666;
+    font-size: 13px;
+    line-height: 20px;
+    margin-left: 40px; }
+
+/* line 38, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/file-upload.css.sass */
+#new_photo {
+  position: relative; }
+  /* line 41, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/file-upload.css.sass */
+  #new_photo input {
+    background: red;
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    bottom: -12px;
+    left: -32px;
+    top: -12px;
+    width: 200px; }

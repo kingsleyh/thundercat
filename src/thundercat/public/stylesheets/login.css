@@ -1,0 +1,14 @@
+/* line 4, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/login.css.sass */
+#login_wrapper {
+  background: white;
+  border-radius: 3px;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 32px;
+  padding-bottom: 12px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
+  /* line 13, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/login.css.sass */
+  #login_wrapper .actions {
+    margin-bottom: 0px; }

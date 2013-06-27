@@ -1,3 +1,5 @@
+require 'fileutils'
+
 class PartyStarter
 
   def initialize(webapp)
@@ -9,7 +11,7 @@ class PartyStarter
   end
 
   def remove
-
+   FileUtils.rm_rf(@webapp[:location])
   end
 
 end

@@ -1,5 +1,7 @@
 require 'rake'
 require 'jeweler'
+require 'rappa'
+require 'fileutils'
 
 Jeweler::Tasks.new do |gem|
 
@@ -45,6 +47,30 @@ namespace :thin do
     puts "Restarting The Application..."
     Rake::Task["thin:stop"].execute
     Rake::Task["thin:start"].execute
+  end
+
+end
+
+namespace :tc do
+
+  desc "Rappup Thundercat"
+  task :rap do
+    FileUtils.rm_rf(File.dirname(__FILE__) + '/src/rap/thundercat.rap')
+    Rappa.new(:input_directory => File.dirname(__FILE__) + '/src/thundercat',:output_directory => File.dirname(__FILE__) + '/src/rap').package
+  end
+
+  desc "Deploy Latest Monitor and Dev Thundercat locally"
+  task :dev do
+    Rake::Task["tc:rap"].execute
+    dev_instance = File.dirname(__FILE__) + '/devthunder/'
+    FileUtils.rm_rf(dev_instance) if File.exists?(dev_instance)
+    `bin/thundercat #{dev_instance}`
+  end
+
+  desc "Deploy latest Dev Thundercat into existing monitor"
+  task :deploy do
+    Rake::Task["tc:rap"].execute
+    FileUtils.cp(File.dirname(__FILE__) + '/src/rap/thundercat.rap',File.dirname(__FILE__) + '/devthunder/webapps')
   end
 
 end

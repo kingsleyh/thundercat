@@ -8,16 +8,16 @@ if name.nil? or name.empty?
 else
 
   begin
-    rap = File.dirname(File.expand_path(__FILE__)) + '/../integration/thundercat.rap'
+    rap = File.dirname(File.expand_path(__FILE__)) + '/../src/rap/thundercat.rap'
     monitor = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/monitor.rb'
     start_script = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/start.sh'
     stop_script = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/stop.sh'
 
-    target_dir = "./#{name}"
+    target_dir = "#{name}"
     if File.exists?(target_dir)
       puts "[ThunderCat] The directory you supplied: #{target_dir} already exists"
     else
-      FileUtils.mkdir(target_dir)
+      FileUtils.mkpath(target_dir)
       FileUtils.mkpath("#{target_dir}/webapps")
       FileUtils.mkpath("#{target_dir}/log")
       FileUtils.mkpath("#{target_dir}/archive")

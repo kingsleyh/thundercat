@@ -1,0 +1,158 @@
+/* line 5, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+#overlay {
+  display: none;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-image: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 100, color-stop(0%, rgba(0, 0, 0, 0.4)), color-stop(100%, rgba(0, 0, 0, 0.9)));
+  background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+  background-image: -moz-radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+  background-image: -o-radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+  background-image: radial-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9)); }
+
+/* line 14, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+.modal {
+  background: whitesmoke;
+  display: none;
+  margin: 0 auto;
+  position: relative;
+  max-width: 480px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 1px 2px black;
+  -moz-box-shadow: 0 1px 2px black;
+  box-shadow: 0 1px 2px black; }
+  @media screen and (max-width: 480px) {
+    /* line 14, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+    .modal {
+      margin: 0 10px; } }
+  /* line 26, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal.modal-small {
+    width: 320px; }
+  /* line 29, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal.modal-medium {
+    max-width: none;
+    width: 60%; }
+  /* line 33, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal.modal-large {
+    max-width: none;
+    width: 90%; }
+  /* line 37, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal header h3 {
+    color: #232323;
+    font-weight: medium;
+    margin: 0;
+    padding: 20px;
+    -webkit-border-radius: 2px 2px 0 0;
+    -moz-border-radius: 2px 2px 0 0;
+    -ms-border-radius: 2px 2px 0 0;
+    -o-border-radius: 2px 2px 0 0;
+    border-radius: 2px 2px 0 0;
+    font-size: 16px;
+    font-size: 1.6rem; }
+  /* line 45, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal header.big-header h3 {
+    line-height: 24px;
+    padding: 46px;
+    text-align: center; }
+    @media screen and (max-width: 480px) {
+      /* line 45, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+      .modal header.big-header h3 {
+        padding: 30px 20px; } }
+  /* line 53, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal header h3 strong {
+    color: black;
+    font-weight: bold; }
+  /* line 57, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal header a[data-dismiss="modal"] {
+    color: #d6d6d6;
+    float: right;
+    padding: 5px 6px;
+    text-decoration: none;
+    font-size: 12px;
+    font-size: 1.2rem;
+    -webkit-transition: color 0.2s ease-out;
+    -moz-transition: color 0.2s ease-out;
+    -o-transition: color 0.2s ease-out;
+    transition: color 0.2s ease-out; }
+  /* line 65, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal header a[data-dismiss="modal"]:hover {
+    color: #999999; }
+  /* line 68, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal section {
+    *zoom: 1;
+    border-top: 1px solid #d4d4d4;
+    padding: 20px 20px;
+    background: white; }
+    /* line 69, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+    .modal section * {
+      box-sizing: border-box; }
+    /* line 22, /Users/bram/.rbenv/versions/1.9.3-p429/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+    .modal section:after {
+      content: "\0020";
+      display: block;
+      height: 0;
+      clear: both;
+      overflow: hidden;
+      visibility: hidden; }
+    /* line 77, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+    .modal section .col {
+      float: left;
+      width: 33%;
+      padding: 10px; }
+      /* line 82, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+      .modal section .col h3 {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 26px; }
+      /* line 87, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+      .modal section .col p {
+        line-height: 22px; }
+      /* line 91, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+      .modal section .col pre {
+        font-size: 12px;
+        background: #dddddd;
+        border: 1px solid #bbbbbb;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        color: #444444;
+        line-height: 20px;
+        font-family: Consolas, Courier, monospace; }
+  /* line 102, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal footer {
+    background: #343434;
+    border-bottom: 1px solid #1f1f1f;
+    border-top: 1px solid #212121;
+    -webkit-box-shadow: inset 0 1px 0 #454545;
+    -moz-box-shadow: inset 0 1px 0 #454545;
+    box-shadow: inset 0 1px 0 #454545; }
+  /* line 108, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal footer a {
+    color: #999999;
+    display: inline-block;
+    font-weight: bold;
+    padding: 12px 0;
+    text-align: center;
+    width: 49%;
+    font-size: 13px;
+    font-size: 1.3rem;
+    text-shadow: 0 1px 0 black;
+    -webkit-transition: color 0.2s ease-out;
+    -moz-transition: color 0.2s ease-out;
+    -o-transition: color 0.2s ease-out;
+    transition: color 0.2s ease-out; }
+  /* line 119, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal footer a.primary, .modal footer a:hover {
+    color: white; }
+  /* line 122, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/modal.css.sass */
+  .modal footer a:last-child {
+    border-left: 1px solid #212121;
+    -webkit-box-shadow: inset 1px 0 0 #454545;
+    -moz-box-shadow: inset 1px 0 0 #454545;
+    box-shadow: inset 1px 0 0 #454545; }

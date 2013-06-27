@@ -1,0 +1,344 @@
+/* line 6, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+button {
+  margin: 0; }
+
+/* line 11, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button {
+  background-color: #f3f3f3;
+  background-size: 1px 60px;
+  border: 1px solid silver;
+  color: #646464;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 14px;
+  padding: 8px 14px;
+  text-decoration: none;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f5f5f5), color-stop(100%, #cccccc));
+  background-image: -webkit-linear-gradient(top, #f5f5f5, #cccccc);
+  background-image: -moz-linear-gradient(top, #f5f5f5, #cccccc);
+  background-image: -o-linear-gradient(top, #f5f5f5, #cccccc);
+  background-image: linear-gradient(top, #f5f5f5, #cccccc);
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+  -webkit-box-shadow: inset 0 1px 0 white, 0 1px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 0 white, 0 1px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 0 white, 0 1px 2px rgba(0, 0, 0, 0.25);
+  font-size: 12px;
+  font-size: 1.2rem;
+  text-shadow: 0 1px 0 white;
+  -webkit-transition: color 0.2s ease-out, background 0.2s ease-out, box-shadow 0.05s ease-out;
+  -moz-transition: color 0.2s ease-out, background 0.2s ease-out, box-shadow 0.05s ease-out;
+  -o-transition: color 0.2s ease-out, background 0.2s ease-out, box-shadow 0.05s ease-out;
+  transition: color 0.2s ease-out, background 0.2s ease-out, box-shadow 0.05s ease-out; }
+  /* line 30, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  .button:hover, .button.hover {
+    background-position: 100%;
+    color: #333333; }
+
+/* line 34, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button[data-icon]:before {
+  font-size: 140%;
+  font-weight: normal;
+  line-height: 50%; }
+
+/* line 41, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button.button-primary {
+  background-color: #81b0ef;
+  border: 1px solid #4571b5;
+  color: white;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #81b0ef), color-stop(100%, #345994));
+  background-image: -webkit-linear-gradient(top, #81b0ef, #345994);
+  background-image: -moz-linear-gradient(top, #81b0ef, #345994);
+  background-image: -o-linear-gradient(top, #81b0ef, #345994);
+  background-image: linear-gradient(top, #81b0ef, #345994);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 1px 2px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 0 #26497e; }
+  /* line 49, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  .button.button-primary:hover, .button.button-primary.hover {
+    color: white; }
+
+/* line 54, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button.button-dark {
+  background-color: #575757;
+  border: 1px solid #333333;
+  color: #eeeeee;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #575757), color-stop(100%, #202020));
+  background-image: -webkit-linear-gradient(top, #575757, #202020);
+  background-image: -moz-linear-gradient(top, #575757, #202020);
+  background-image: -o-linear-gradient(top, #575757, #202020);
+  background-image: linear-gradient(top, #575757, #202020);
+  -webkit-box-shadow: inset 0 1px 0 #575757, 0 1px 2px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0 1px 0 #575757, 0 1px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 0 #575757, 0 1px 2px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 -1px 0 black; }
+  /* line 62, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  .button.button-dark:hover {
+    color: white; }
+
+/* line 67, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button.button-danger {
+  background-color: #7c0c00;
+  border: 1px solid #7c0c00;
+  color: white;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fc0d1b), color-stop(100%, #820e0b));
+  background-image: -webkit-linear-gradient(top, #fc0d1b, #820e0b);
+  background-image: -moz-linear-gradient(top, #fc0d1b, #820e0b);
+  background-image: -o-linear-gradient(top, #fc0d1b, #820e0b);
+  background-image: linear-gradient(top, #fc0d1b, #820e0b);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35); }
+  /* line 75, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  .button.button-danger:hover {
+    color: white; }
+
+/* line 80, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button.button-link {
+  background: none;
+  border: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important; }
+  /* line 85, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  .button.button-link.button-danger {
+    color: #7c0c00;
+    font-weight: normal;
+    text-shadow: none; }
+  /* line 90, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  .button.button-link.button-primary {
+    color: #4571b5;
+    font-weight: normal;
+    text-shadow: none; }
+
+/* line 97, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button.button-plain-link {
+  background: none;
+  border: none;
+  color: #4571b5;
+  font-size: 13px;
+  font-weight: normal;
+  padding-left: 0;
+  text-transform: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important; }
+
+/* line 109, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button.button-plain {
+  background: #ededed;
+  padding: 5px 10px;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  font-size: 10px;
+  font-size: 1rem;
+  text-shadow: none; }
+
+/* line 116, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button.button-plain:hover {
+  color: #333333; }
+
+/* line 119, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button.button-plain.button-danger {
+  background: #db1422; }
+  /* line 122, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  .button.button-plain.button-danger:hover {
+    color: white; }
+
+/* line 125, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button.button-plain.button-primary {
+  background: #5d87cc;
+  color: white; }
+
+/* line 129, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button.button-plain.button-dark {
+  background: #575757;
+  color: white; }
+
+/* line 135, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button.button-small {
+  background-size: 1px 40px;
+  padding: 4px 10px;
+  font-size: 10px;
+  font-size: 1rem; }
+
+/* line 142, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button-well {
+  background-color: #e7e7e7;
+  display: inline-block;
+  line-height: 14px;
+  margin-right: 8px;
+  padding: 5px;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e7e7e7), color-stop(100%, #f6f6f6));
+  background-image: -webkit-linear-gradient(top, #e7e7e7, #f6f6f6);
+  background-image: -moz-linear-gradient(top, #e7e7e7, #f6f6f6);
+  background-image: -o-linear-gradient(top, #e7e7e7, #f6f6f6);
+  background-image: linear-gradient(top, #e7e7e7, #f6f6f6);
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -ms-border-radius: 25px;
+  -o-border-radius: 25px;
+  border-radius: 25px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1); }
+  /* line 153, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  .button-well.button-well-small {
+    padding: 3px; }
+  /* line 156, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  .button-well.button-well-dark {
+    background: none;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5); }
+
+/* line 160, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.pull-right .button-well {
+  margin-left: 8px;
+  margin-right: 0px; }
+
+/* line 166, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button:active, .button.button-active {
+  background-position: 100%;
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5); }
+
+/* line 172, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button-group {
+  display: inline-block;
+  margin-right: 8px; }
+  /* line 176, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  .button-group .button {
+    margin: 0 -3px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px; }
+  /* line 180, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  .button-group .button:first-child {
+    -webkit-border-radius: 25px 0 0 25px;
+    -moz-border-radius: 25px 0 0 25px;
+    -ms-border-radius: 25px 0 0 25px;
+    -o-border-radius: 25px 0 0 25px;
+    border-radius: 25px 0 0 25px; }
+  /* line 183, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  .button-group .button:last-child {
+    -webkit-border-radius: 0 25px 25px 0;
+    -moz-border-radius: 0 25px 25px 0;
+    -ms-border-radius: 0 25px 25px 0;
+    -o-border-radius: 0 25px 25px 0;
+    border-radius: 0 25px 25px 0; }
+
+/* line 186, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button-well > .button-group:first-child {
+  margin-left: 3px; }
+
+/* line 189, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+.button-well > .button-group:last-child {
+  margin-right: 3px; }
+
+/* line 194, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+[data-badge] {
+  position: relative; }
+
+/* line 197, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+[data-badge]:after {
+  border: 1px solid #660000;
+  color: white;
+  content: attr(data-badge);
+  font-family: "Aller";
+  font-weight: bold;
+  left: -8px;
+  line-height: 16px;
+  min-width: 10px;
+  padding: 1px 4px;
+  position: absolute;
+  text-align: center;
+  top: -4px;
+  background-image: -webkit-gradient(radial, 0% 0%, 0, 0% 0%, 100, color-stop(0%, #fc0d1b), color-stop(100%, #820e0b));
+  background-image: -webkit-radial-gradient(top left, #fc0d1b, #820e0b);
+  background-image: -moz-radial-gradient(top left, #fc0d1b, #820e0b);
+  background-image: -o-radial-gradient(top left, #fc0d1b, #820e0b);
+  background-image: radial-gradient(top left, #fc0d1b, #820e0b);
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border-radius: 50px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  font-size: 12px;
+  font-size: 1.2rem;
+  text-shadow: none; }
+
+/* line 218, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+[data-dropdown] {
+  position: relative; }
+  /* line 221, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  [data-dropdown] ul {
+    background: white;
+    border: 1px solid #cccccc;
+    display: none;
+    list-style: none;
+    margin: 0;
+    margin-top: 6px;
+    padding: 6px 0;
+    position: absolute;
+    right: 0px;
+    width: 200px;
+    z-index: 999;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    border-radius: 7px;
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2); }
+  /* line 236, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  [data-dropdown] ul:after {
+    border-bottom: 7px solid white;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    position: absolute;
+    right: 12px;
+    top: -7px;
+    width: 0; }
+  /* line 248, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  [data-dropdown] ul.open {
+    display: block; }
+  /* line 251, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  [data-dropdown] ul li.divider {
+    border-top: 1px solid #e9e9e9;
+    margin: 8px 0; }
+  /* line 255, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  [data-dropdown] ul li a {
+    color: #333333;
+    display: block;
+    padding: 8px 18px;
+    text-decoration: none;
+    font-size: 13px;
+    font-size: 1.3rem; }
+  /* line 262, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/buttons.sass */
+  [data-dropdown] ul li a:hover {
+    background-color: #4571b5;
+    color: white; }

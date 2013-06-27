@@ -1,0 +1,56 @@
+/* line 6, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+.table-container {
+  margin: 0 -32px; }
+  @media screen and (max-width: 45em) {
+    /* line 6, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+    .table-container {
+      margin: 0 -16px; } }
+
+/* line 12, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+table.table {
+  color: #222222;
+  margin-bottom: 32px;
+  width: 100%;
+  font-size: 13px;
+  font-size: 1.3rem; }
+  /* line 18, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+  table.table tbody tr, table.table thead tr {
+    border-bottom: 1px solid #dddddd; }
+  /* line 21, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+  table.table tbody tr:hover {
+    background: #f1f1f1; }
+  /* line 24, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+  table.table tr td, table.table tr th {
+    padding: 12px; }
+  /* line 27, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+  table.table thead tr th {
+    color: #777777;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-size: 1.2rem; }
+  /* line 34, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+  table.table td.align-right {
+    text-align: right; }
+  /* line 37, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+  table.table td.align-center {
+    text-align: center; }
+  /* line 40, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+  table.table tbody tr:last-child {
+    border-bottom: none; }
+  /* line 43, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+  table.table tfoot tr {
+    border-top: 1px solid #dddddd; }
+  /* line 46, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+  table.table td.nowrap, table.table th.nowrap {
+    white-space: nowrap; }
+
+/* line 49, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+.ui-sortable-placeholder {
+  height: 50px;
+  visibility: visible; }
+
+/* line 53, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tables.css.sass */
+.ui-sortable-helper {
+  cursor: move; }
