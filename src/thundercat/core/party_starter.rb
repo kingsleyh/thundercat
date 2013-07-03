@@ -7,7 +7,8 @@ class PartyStarter
   end
 
   def run(command_property)
-    `cd #{@webapp[:location]} ; ./#{@webapp[command_property]}`
+    FileUtils.chdir(@webapp[:location])
+    Bundler.clean_system("./#{@webapp[command_property]}")
   end
 
   def remove

@@ -21,8 +21,10 @@ class Decision
         decide(:create, webapps_dir, entry, 'file')
       end
     end
-
+    `cd #{webapps_dir}/thundercat; ./start.sh`
   end
+
+  private
 
   def deploy_rap(rap_file, rap_dir, base)
     Rappa.new(:input_archive => rap_file, :output_archive => base).expand
@@ -31,8 +33,15 @@ class Decision
       rap = YAML.load_file(rap_config)
       start_script = rap[:start_script]
       stop_script = rap[:stop_script]
+      bootstrap_script = rap[:bootstrap]
+      p "1. found boostrap script: #{bootstrap_script}"
       `cd #{rap_dir} ; chmod +x #{start_script}`
       `cd #{rap_dir} ; chmod +x #{stop_script}`
+      if !bootstrap_script.nil?
+        p "2. found boostrap script: #{bootstrap_script}"
+        `cd #{rap_dir} ; chmod +x #{bootstrap_script}`
+        `cd #{rap_dir} ; ./#{bootstrap_script}`
+      end
       `cd #{rap_dir} ; ./#{start_script}`
       puts "[ThunderCat] Successfully deployed and started app at: #{rap_file}"
       archive_rap(rap_file,base)

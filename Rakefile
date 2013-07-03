@@ -2,16 +2,17 @@ require 'rake'
 require 'jeweler'
 require 'rappa'
 require 'fileutils'
+require 'yaml'
 
 Jeweler::Tasks.new do |gem|
 
-  gem.name        = 'thundercat'
-  gem.homepage    = 'https://github.com/masterthought/thundercat'
-  gem.license     = 'Apache 2.0'
-  gem.email       = 'kingsley@masterthought.net'
-  gem.authors     = ['Kingsley Hendrickse']
+  gem.name = 'thundercat'
+  gem.homepage = 'https://github.com/masterthought/thundercat'
+  gem.license = 'Apache 2.0'
+  gem.email = 'kingsley@masterthought.net'
+  gem.authors = ['Kingsley Hendrickse']
 
-  gem.summary     = %Q{Thundercat Rack deployment and monitoring}
+  gem.summary = %Q{Thundercat Rack deployment and monitoring}
   gem.description = <<-EOF
 Easy way to deploy and monitor Rack applications as .rap archives
   EOF
@@ -53,10 +54,20 @@ end
 
 namespace :tc do
 
+  desc "Increment Version"
+  task :version do
+    rap_file = File.open(File.dirname(__FILE__) + '/src/thundercat/rap.yml')
+    rap = YAML::load(rap_file)
+    digit = rap[:version].split('.')[-1].to_i + 1
+    rap[:version] = '0.0.' + digit.to_s
+    File.open(rap_file, 'w') { |f| f.puts rap.to_yaml }
+  end
+
   desc "Rappup Thundercat"
   task :rap do
     FileUtils.rm_rf(File.dirname(__FILE__) + '/src/rap/thundercat.rap')
-    Rappa.new(:input_directory => File.dirname(__FILE__) + '/src/thundercat',:output_directory => File.dirname(__FILE__) + '/src/rap').package
+    Rake::Task["tc:version"].execute
+    Rappa.new(:input_directory => File.dirname(__FILE__) + '/src/thundercat', :output_directory => File.dirname(__FILE__) + '/src/rap').package
   end
 
   desc "Deploy Latest Monitor and Dev Thundercat locally"
@@ -70,7 +81,7 @@ namespace :tc do
   desc "Deploy latest Dev Thundercat into existing monitor"
   task :deploy do
     Rake::Task["tc:rap"].execute
-    FileUtils.cp(File.dirname(__FILE__) + '/src/rap/thundercat.rap',File.dirname(__FILE__) + '/devthunder/webapps')
+    FileUtils.cp(File.dirname(__FILE__) + '/src/rap/thundercat.rap', File.dirname(__FILE__) + '/devthunder/webapps')
   end
 
 end

@@ -7,8 +7,12 @@ require 'yaml'
 require File.dirname(__FILE__) + '/core/web_app_status'
 require File.dirname(__FILE__) + '/core/party_starter'
 
+def config_file
+  YAML::load_file(settings.root + '/config.yml')
+end
+
 enable :sessions
-set :password, 'password'
+set :password, config_file[:password]
 set :home, '/admin'
 set :views, settings.root + '/views'
 set :public_folder, settings.root + '/public'
@@ -26,23 +30,42 @@ end
 
 get '/services/start/:id' do
   protected!
-  PartyStarter.new(discover_webapps[params[:id].to_i]).run(:start_script)
-  redirect '/admin', :notice => 'Started Application'
+  app = discover_webapps[params[:id].to_i]
+  PartyStarter.new(app).run(:start_script)
+  redirect '/admin', :notice => "Started Application: #{app[:name]}"
 end
 
 get '/services/stop/:id' do
   protected!
-  PartyStarter.new(discover_webapps[params[:id].to_i]).run(:stop_script)
-  redirect '/admin', :notice => 'Stopped Application'
+  app = discover_webapps[params[:id].to_i]
+  PartyStarter.new(app).run(:stop_script)
+  redirect '/admin', :notice => "Stopped Application: #{app[:name]}"
 end
 
 get '/services/remove/:id' do
   protected!
-  PartyStarter.new(discover_webapps[params[:id].to_i]).remove
-  redirect '/admin', :notice => 'Removed Application'
+  app = discover_webapps[params[:id].to_i]
+  PartyStarter.new(app).remove
+  redirect '/admin', :notice => "Removed Application: #{app[:name]}"
+end
+
+# curl -X PUT -i -F file=@sinatra_app.rap http://127.0.0.1:8089/api/deploy?key=api_key
+put '/api/deploy' do
+  error 401 unless valid_key?(params[:key])
+  tempfile = params['file'][:tempfile]
+  filename = params['file'][:filename]
+  if !filename.nil? and filename.match(/.rap$/)
+    File.open(File.dirname(__FILE__) + '/../' + filename, "w") do |f|
+      f.write(tempfile.read)
+    end
+    'SUCCESS'
+  else
+    'ERROR You must supply a valid .rap archive!'
+  end
 end
 
 post '/upload' do
+  protected!
   if params.empty?
     redirect '/admin', :notice => 'ERROR You must supply a valid .rap archive!'
   else
@@ -60,7 +83,6 @@ post '/upload' do
 
 end
 
-
 get '/' do
   if authorized?
     redirect '/admin'
@@ -75,3 +97,9 @@ def discover_webapps
   webapps_path = File.dirname(__FILE__) + '/../'
   WebAppStatus.new(webapps_path).discover
 end
+
+def valid_key?(key)
+  key == config_file[:key]
+end
+
+
