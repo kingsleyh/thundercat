@@ -1,14 +1,23 @@
 require File.dirname(__FILE__) + '/../core/pid_info'
 require 'yaml'
+require 'json'
 
 class WebAppStatus
 
-  def initialize(webapps_path)
+  def initialize(webapps_path,file=File,pid_info=PidInfo,dir=Dir,yaml=YAML)
+    @file = file
+    @pid_info = pid_info
+    @dir = dir
+    @yaml = yaml
     @webapps_path = append_trailing_slash(webapps_path)
   end
 
   def discover
     get_status(find_rap_data)
+  end
+
+  def discover_as_json
+    discover.to_json
   end
 
   private
@@ -17,7 +26,7 @@ class WebAppStatus
     webapps = []
     rap_data.each do |data|
       pids = @webapps_path + data[:webapp] + '/' + data[:pids]
-      webapps << PidInfo.new(pids).discover.merge(data)
+      webapps << @pid_info.new(pids).discover.merge(data)
     end
     webapps
   end
@@ -25,15 +34,15 @@ class WebAppStatus
   def find_rap_data
     counter = 0
     webapps = []
-    if File.exists?(@webapps_path)
-      Dir.entries(@webapps_path).each do |entry|
+    if @file.exists?(@webapps_path)
+      @dir.entries(@webapps_path).each do |entry|
         #p entry
-        if File.directory?(@webapps_path + entry) and !%w(. ..).include?(@webapps_path + entry)
-          contents = Dir.entries(@webapps_path + entry)
+        if @file.directory?(@webapps_path + entry) and !%w(. ..).include?(@webapps_path + entry)
+          contents = @dir.entries(@webapps_path + entry)
           #p contents
           if contents.include?('rap.yml')
             data = {:webapp => entry, :location => @webapps_path + entry, :id => counter}
-            webapps << data.merge(YAML::load_file(@webapps_path + entry + '/rap.yml'))
+            webapps << data.merge(@yaml::load_file(@webapps_path + entry + '/rap.yml'))
             counter+=1
           end
         end

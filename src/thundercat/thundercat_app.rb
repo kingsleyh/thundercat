@@ -28,6 +28,11 @@ get '/admin' do
   erb :admin
 end
 
+get '/services/apps' do
+  webapps_path = File.dirname(__FILE__) + '/../'
+  WebAppStatus.new(webapps_path).discover_as_json
+end
+
 get '/services/start/:id' do
   protected!
   app = discover_webapps[params[:id].to_i]

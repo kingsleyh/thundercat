@@ -5,7 +5,7 @@ namespace :thin do
   desc "Start The Application"
   task :start do
     puts "Restarting The Application..."
-    system("thin start -e production -p 9998 -s 1 -d")
+    system("thin start -e production -p 9992 -s 1 -d")
   end
 
   desc "Stop The Application"
