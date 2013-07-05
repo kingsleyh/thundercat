@@ -3,6 +3,7 @@ require 'jeweler'
 require 'rappa'
 require 'fileutils'
 require 'yaml'
+require 'sys/proctable'
 
 Jeweler::Tasks.new do |gem|
 
@@ -82,6 +83,26 @@ namespace :tc do
   task :deploy do
     Rake::Task["tc:rap"].execute
     FileUtils.cp(File.dirname(__FILE__) + '/src/rap/thundercat.rap', File.dirname(__FILE__) + '/devthunder/webapps')
+  end
+
+end
+
+namespace :karma do
+
+  desc "Start Karma Test Server"
+  task :start do
+    command = "karma start #{File.dirname(__FILE__) + '/angular-test/config/karma.conf.js'} &"
+    puts "Starting Karma Test Server with command: #{command}"
+    system(command)
+  end
+
+  desc "Stop Karma Test Server"
+  task :stop do
+    include Sys
+    pid = nil
+    ProcTable.ps{|pr| pid = pr.pid.to_s if pr.cmdline.match('usr/local/bin/karma start')}
+    puts "Killing Karma Test Server running with pid: #{pid}"
+    system("sudo kill -9 #{pid}")
   end
 
 end

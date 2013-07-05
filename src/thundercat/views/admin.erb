@@ -38,7 +38,7 @@
 
         <div class='button-well button-well-dark'>
           <div class='button-group'>
-            <a class='button button-dark' data-icon='e' href='#'>Refresh</a>
+            <a class='button button-dark' data-icon='e' href='/logout'>Logout</a>
             <a class='button button-dark icon-only' data-icon='Q' href='/logout'></a>
           </div>
         </div>
@@ -74,7 +74,7 @@
                 <label>Number of Applications</label>
               </td>
               <td>
-                <%= @webapps.size %>
+                {{apps.content.length}}
               </td>
             </tr>
             <tr>
@@ -95,7 +95,6 @@
       </div>
       <div class='tab-content active' id='footable'>
         <div class='table-container'>
-
           <table class='table footable'>
             <thead>
             <tr>
@@ -109,14 +108,46 @@
             </thead>
             <tbody>
 
-            <tr ng-repeat="app in apps">
+            <tr ng-repeat="app in apps.content">
               <td>{{app.name}}</td>
               <td>{{app.version}}</td>
               <td>{{app.server_type}}</td>
               <td>{{app.webapp}}</td>
-              <td>{{app.name}}</td>
-            </tr>
+              <td ng-switch on="app.has_pids">
+                <span ng-switch-when="no">
+                  <p style="padding:5px;background-color:plum;">Stopped</p>
+                </span>
+                <span ng-switch-when="yes">
+                  <table class='table'>
+                    <tr>
+                      <th>Pid</th>
+                      <th>Port</th>
+                      <th>Start Time</th>
+                    </tr>
+                    <tr ng-repeat="pid in app.pid_data" style="background-color:lightgreen">
+                      <td>{{pid.pid}}</td>
+                      <td><a href="http://localhost:{{pid.port}}">{{pid.port}}</a></td>
+                      <td>{{pid.start_time }}</td>
+                    </tr>
+                  </table>
+                </span>
+              </td>
+              <td ng-switch on="app.is_thundercat">
+                <div ng-switch-when="yes"></div>
+                <div ng-switch-when="no">
+                  <div ng-switch on="app.has_pids">
+                    <span ng-switch-when="no">
+                      <button class='button button-small button-danger' ng-click="performAction('remove',app.id)">remove</button>
+                      <button class='button button-small button-primary' ng-click="performAction('start',app.id)">start</button>
+                    </span>
+                    <span ng-switch-when="yes">
 
+                      <button class='button button-small button-primary' ng-click="performAction('stop',app.id)">stop</button>
+                    </span>
+                  </div>
+                </div>
+              </td>
+            </tr>
             </tbody>
           </table>
 

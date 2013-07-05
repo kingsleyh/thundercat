@@ -9,7 +9,8 @@ class PidInfo
   end
 
   def discover
-    {:pid_data => get_pid_status(get_pids)}
+    pids = get_pids
+    {:pid_data => get_pid_status(pids), :has_pids => has_pids?(pids)}
   end
 
   private
@@ -55,6 +56,10 @@ class PidInfo
       time = process.starttime.to_s.strip
     end
     time
+  end
+
+  def has_pids?(pids)
+    pids.empty? ? 'no' : 'yes'
   end
 
 end

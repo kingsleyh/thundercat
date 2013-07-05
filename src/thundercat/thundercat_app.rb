@@ -24,7 +24,6 @@ end
 
 get '/admin' do
   protected!
-  @webapps = discover_webapps
   erb :admin
 end
 
@@ -37,21 +36,18 @@ get '/services/start/:id' do
   protected!
   app = discover_webapps[params[:id].to_i]
   PartyStarter.new(app).run(:start_script)
-  redirect '/admin', :notice => "Started Application: #{app[:name]}"
 end
 
 get '/services/stop/:id' do
   protected!
   app = discover_webapps[params[:id].to_i]
   PartyStarter.new(app).run(:stop_script)
-  redirect '/admin', :notice => "Stopped Application: #{app[:name]}"
 end
 
 get '/services/remove/:id' do
   protected!
   app = discover_webapps[params[:id].to_i]
   PartyStarter.new(app).remove
-  redirect '/admin', :notice => "Removed Application: #{app[:name]}"
 end
 
 # curl -X PUT -i -F file=@sinatra_app.rap http://127.0.0.1:8089/api/deploy?key=api_key

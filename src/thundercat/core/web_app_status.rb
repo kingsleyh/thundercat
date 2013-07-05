@@ -42,7 +42,8 @@ class WebAppStatus
           #p contents
           if contents.include?('rap.yml')
             data = {:webapp => entry, :location => @webapps_path + entry, :id => counter}
-            webapps << data.merge(@yaml::load_file(@webapps_path + entry + '/rap.yml'))
+            webapp = data.merge(@yaml::load_file(@webapps_path + entry + '/rap.yml'))
+            webapps << webapp.merge(is_thundercat?(webapp))
             counter+=1
           end
         end
@@ -54,6 +55,11 @@ class WebAppStatus
   def append_trailing_slash(path)
     path = "#{path}/" if path[-1] != '/'
     path
+  end
+
+  def is_thundercat?(webapp)
+    result = webapp[:name] == 'ThunderCat' ? 'yes' : 'no'
+    {:is_thundercat => result}
   end
 
 end
