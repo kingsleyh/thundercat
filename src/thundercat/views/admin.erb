@@ -16,7 +16,7 @@
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
 </head>
-<body ng-app="thundercat" ng-controller="AppListCtrl">
+<body ng-app="thundercat">
 <div id='wrapper'>
   <header id='header'>
     <div class='inner-header'>
@@ -63,7 +63,7 @@
         </li>
       </ul>
     </nav>
-    <section id='content'>
+    <section id='content' ng-controller="AppListCtrl">
       <div class='well'>
         <h1>Apps</h1>
 
@@ -93,6 +93,7 @@
         <br/>
 
       </div>
+
       <div class='tab-content active' id='footable'>
         <div class='table-container'>
           <table class='table footable'>
@@ -133,19 +134,21 @@
                 </span>
               </td>
               <td ng-switch on="app.is_thundercat">
-                <div ng-switch-when="yes"></div>
-                <div ng-switch-when="no">
-                  <div ng-switch on="app.has_pids">
+
+                  <div ng-switch-when="yes"></div>
+                  <div ng-switch-when="no">
+                    <div ng-switch on="app.has_pids">
                     <span ng-switch-when="no">
+
                       <button class='button button-small button-danger' ng-click="performAction('remove',app.id)">remove</button>
                       <button class='button button-small button-primary' ng-click="performAction('start',app.id)">start</button>
+
                     </span>
                     <span ng-switch-when="yes">
-
                       <button class='button button-small button-primary' ng-click="performAction('stop',app.id)">stop</button>
                     </span>
+                    </div>
                   </div>
-                </div>
               </td>
             </tr>
             </tbody>

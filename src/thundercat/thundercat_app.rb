@@ -23,7 +23,7 @@ get '/login' do
 end
 
 get '/admin' do
-  protected!
+  #protected!
   erb :admin
 end
 
@@ -33,19 +33,19 @@ get '/services/apps' do
 end
 
 get '/services/start/:id' do
-  protected!
+  #protected!
   app = discover_webapps[params[:id].to_i]
   PartyStarter.new(app).run(:start_script)
 end
 
 get '/services/stop/:id' do
-  protected!
+  #protected!
   app = discover_webapps[params[:id].to_i]
   PartyStarter.new(app).run(:stop_script)
 end
 
 get '/services/remove/:id' do
-  protected!
+  #protected!
   app = discover_webapps[params[:id].to_i]
   PartyStarter.new(app).remove
 end
@@ -66,7 +66,7 @@ put '/api/deploy' do
 end
 
 post '/upload' do
-  protected!
+  #protected!
   if params.empty?
     redirect '/admin', :notice => 'ERROR You must supply a valid .rap archive!'
   else

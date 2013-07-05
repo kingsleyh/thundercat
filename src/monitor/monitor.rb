@@ -40,7 +40,8 @@ class Decision
       if !bootstrap_script.nil?
         p "2. found boostrap script: #{bootstrap_script}"
         `cd #{rap_dir} ; chmod +x #{bootstrap_script}`
-        `cd #{rap_dir} ; ./#{bootstrap_script}`
+        puts "[Thundercat] executing boostrap: #{bootstrap_script}"
+        puts `cd #{rap_dir} ; ./#{bootstrap_script}`
       end
       `cd #{rap_dir} ; ./#{start_script}`
       puts "[ThunderCat] Successfully deployed and started app at: #{rap_file}"

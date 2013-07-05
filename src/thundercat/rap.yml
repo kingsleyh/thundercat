@@ -1,9 +1,9 @@
 ---
 :name: ThunderCat
-:version: 0.0.114
+:version: 0.0.162
 :server_type: thin
 :start_script: start.sh
 :stop_script: stop.sh
 :pids: tmp/pids
 :description: Thunder App
-:boostrap: bootstrap.sh
+:bootstrap: bootstrap.sh
