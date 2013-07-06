@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'sinatra'
 gem 'sinatra-formhelpers'
-gem 'sinatra-simple-auth'
+gem 'sinatra-single-user-auth'
 gem 'fssm'
 gem 'thin'
 gem 'rspec'

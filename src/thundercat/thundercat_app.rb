@@ -12,6 +12,7 @@ def config_file
 end
 
 enable :sessions
+set :username, config_file[:username]
 set :password, config_file[:password]
 set :home, '/admin'
 set :views, settings.root + '/views'

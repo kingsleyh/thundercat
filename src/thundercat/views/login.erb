@@ -24,15 +24,9 @@
   <link rel="stylesheet" href="common/theme/fonts/font-awesome/css/font-awesome.min.css">
   <!--[if IE 7]><link rel="stylesheet" href="common/theme/fonts/font-awesome/css/font-awesome-ie7.min.css"><![endif]-->
 
-  <!-- Uniform Pretty Checkboxes -->
-  <link href="common/theme/scripts/plugins/forms/pixelmatrix-uniform/css/uniform.default.css" rel="stylesheet" />
-
   <!-- Main Theme Stylesheet :: CSS -->
-  <link href="common/theme/css/style-default.css?1372280995" rel="stylesheet" />
+  <link href="common/theme/css/style-default.css" rel="stylesheet" />
 
-
-  <!-- LESS.js Library -->
-  <script src="common/theme/scripts/plugins/system/less.min.js"></script>
 </head>
 <body class="login">
 
@@ -94,7 +88,7 @@
               <!-- Form -->
               <form method="post" action="/login">
                 <label>Username or Email</label>
-                <input type="text" class="input-block-level" placeholder="Your Username"/>
+                <input type="text" class="input-block-level" name="username" placeholder="Your Username"/>
                 <label>Password</label>
                 <input type="password" class="input-block-level margin-none" name="password" placeholder="Your Password" />
                 <div class="separator bottom"></div>
@@ -137,36 +131,10 @@
 </div>
 <!-- // Main Container Fluid END -->
 
-<!-- Themer -->
-<div id="themer" class="collapse">
-  <div class="wrapper">
-    <span class="close2">&times; close</span>
-    <h4>Themer <span>color options</span></h4>
-    <ul>
-      <li>Theme: <select id="themer-theme" class="pull-right"></select><div class="clearfix"></div></li>
-      <li>Primary Color: <input type="text" data-type="minicolors" data-default="#ffffff" data-slider="hue" data-textfield="false" data-position="left" id="themer-primary-cp" /><div class="clearfix"></div></li>
-      <li>
-        <span class="link" id="themer-custom-reset">reset theme</span>
-        <span class="pull-right"><label>advanced <input type="checkbox" value="1" id="themer-advanced-toggle" /></label></span>
-      </li>
-    </ul>
-    <div id="themer-getcode" class="hide">
-      <hr class="separator" />
-      <button class="btn btn-primary btn-small pull-right btn-icon glyphicons download" id="themer-getcode-less"><i></i>Get LESS</button>
-      <button class="btn btn-inverse btn-small pull-right btn-icon glyphicons download" id="themer-getcode-css"><i></i>Get CSS</button>
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</div>
-<!-- // Themer END -->
 
 <!-- JQuery -->
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-<!-- Code Beautify -->
-<script src="common/theme/scripts/plugins/other/js-beautify/beautify.js"></script>
-<script src="common/theme/scripts/plugins/other/js-beautify/beautify-html.js"></script>
 
 <!-- Global -->
 <script>
@@ -180,22 +148,6 @@
 
 <!-- Bootstrap -->
 <script src="common/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- SlimScroll Plugin -->
-<script src="common/theme/scripts/plugins/other/jquery-slimScroll/jquery.slimscroll.min.js"></script>
-
-<!-- Common Demo Script -->
-<script src="common/theme/scripts/demo/common.js?1372280995"></script>
-
-<!-- Holder Plugin -->
-<script src="common/theme/scripts/plugins/other/holder/holder.js"></script>
-<script>
-    Holder.add_theme("dark", {background:"#000", foreground:"#aaa", size:9});
-    Holder.add_theme("white", {background:"#fff", foreground:"#c9c9c9", size:9});
-</script>
-
-<!-- Uniform Forms Plugin -->
-<script src="common/theme/scripts/plugins/forms/pixelmatrix-uniform/jquery.uniform.min.js"></script>
 
 </body>
 </html>
