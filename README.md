@@ -29,13 +29,8 @@ First you need to create your ThunderCat file structure:
 
 This will create a directory structure with the path you provide it - the structure is as follows:
 
-  my_apps/
-  ??? archive
-  ??? log
-  ??? monitor.rb
-  ??? start.sh
-  ??? stop.sh
-  ??? webapps
+![file structure]
+(https://github.com/masterthought/thundercat/raw/master/.README/thundercat_structure.jpg)
 
 The start.sh and stop.sh scripts are used to start and stop ThunderCat. Logs go into the logs directory and webapps go into the webapps directory. The archive directory holds backups when you deploy/remove apps via the admin panel.
 The monitor.rb file is what gets started and monitors the webapps directory for changes.
