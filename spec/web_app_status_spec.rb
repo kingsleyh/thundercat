@@ -18,12 +18,12 @@ end
 describe "UnitTests" do
 
   it 'should list all the available apps in the webapps directory' do
-    file=mock('File')
-    pid_info=mock('PidInfo')
-    pid_info_instance_1=mock('PidInfoInstance1')
-    pid_info_instance_2=mock('PidInfoInstance2')
-    dir=mock('Dir')
-    yaml=mock('YAML')
+    file=double('File')
+    pid_info=double('PidInfo')
+    pid_info_instance_1=double('PidInfoInstance1')
+    pid_info_instance_2=double('PidInfoInstance2')
+    dir=double('Dir')
+    yaml=double('YAML')
 
     rap1 = {:name => 'My Sinatra App 1',
             :version => '0.0.2',
