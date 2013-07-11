@@ -1,7 +1,0 @@
-/* line 1, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tabs.css.sass */
-.tab-content {
-  display: none; }
-
-/* line 4, /Users/bram/Dropbox/Apps/Spina 2/source/stylesheets/tabs.css.sass */
-.tab-content.active {
-  display: block; }
