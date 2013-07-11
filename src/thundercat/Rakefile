@@ -1,11 +1,14 @@
 require 'rake'
+require 'yaml'
 
 namespace :thin do
 
   desc "Start The Application"
   task :start do
+    config = YAML::load_file(File.dirname(__FILE__) + '/config.yml')
+    port = config[:port]
     puts "Restarting The Application..."
-    system("thin start -e production -p 8089 -s 1 -d")
+    system("thin start -e production -p #{port} -s 1 -d")
   end
 
   desc "Stop The Application"
