@@ -12,11 +12,15 @@ def config_file
 end
 
 $context = config_file[:context_root]
+home_path = $context.empty? ? '/admin' : "#{$context}admin"
+context_path = $context.empty? ? '/' : $context
+
 
 enable :sessions
 set :username, config_file[:username]
 set :password, config_file[:password]
-set :home, '/admin'
+set :home, home_path
+set :context, context_path
 set :views, settings.root + '/views'
 set :public_folder, settings.root + '/public'
 helpers Sinatra::FormHelpers
