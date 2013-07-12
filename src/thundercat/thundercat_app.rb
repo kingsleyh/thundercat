@@ -11,6 +11,8 @@ def config_file
   YAML::load_file(settings.root + '/config.yml')
 end
 
+$context = config_file[:context_root]
+
 enable :sessions
 set :username, config_file[:username]
 set :password, config_file[:password]

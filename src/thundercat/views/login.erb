@@ -15,17 +15,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
 
   <!-- Bootstrap -->
-  <link href="common/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
-  <link href="common/bootstrap/css/responsive.css" rel="stylesheet" type="text/css" />
+  <link href="<%= $context %>common/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <link href="<%= $context %>common/bootstrap/css/responsive.css" rel="stylesheet" type="text/css" />
 
   <!-- Glyphicons Font Icons -->
-  <link href="common/theme/fonts/glyphicons/css/glyphicons.css" rel="stylesheet" />
+  <link href="<%= $context %>common/theme/fonts/glyphicons/css/glyphicons.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="common/theme/fonts/font-awesome/css/font-awesome.min.css">
-  <!--[if IE 7]><link rel="stylesheet" href="common/theme/fonts/font-awesome/css/font-awesome-ie7.min.css"><![endif]-->
+  <link rel="stylesheet" href="<%= $context %>common/theme/fonts/font-awesome/css/font-awesome.min.css">
+  <!--[if IE 7]><link rel="stylesheet" href="<%= $context %>common/theme/fonts/font-awesome/css/font-awesome-ie7.min.css"><![endif]-->
 
   <!-- Main Theme Stylesheet :: CSS -->
-  <link href="common/theme/css/style-default.css" rel="stylesheet" />
+  <link href="<%= $context %>common/theme/css/style-default.css" rel="stylesheet" />
 
 </head>
 <body class="login">
@@ -43,7 +43,7 @@
         <div class="container-960">
 
           <!-- Brand -->
-          <a href="/" class="appbrand pull-left">ThunderCat</a>
+          <a href="<%= $context %>admin" class="appbrand pull-left">ThunderCat</a>
 
           <ul class="topnav pull-right">
 
@@ -86,7 +86,7 @@
             <div class="widget-body">
 
               <!-- Form -->
-              <form method="post" action="/login">
+              <form method="post" action="<%= $context %>login">
                 <label>Username</label>
                 <input type="text" class="input-block-level" name="username" placeholder="Your Username"/>
                 <label>Password</label>
@@ -133,21 +133,21 @@
 
 
 <!-- JQuery -->
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="<%= $context %>javascripts/jquery-1.10.1.min.js"></script>
+<script src="<%= $context %>javascripts/jquery-migrate-1.2.1.min.js"></script>
 
 <!-- Global -->
 <script>
     var basePath = '',
-            commonPath = 'common/';
+            commonPath = '<%= $context %>common/';
 </script>
 
 
 <!-- Modernizr -->
-<script src="common/theme/scripts/plugins/system/modernizr.js"></script>
+<script src="<%= $context %>common/theme/scripts/plugins/system/modernizr.js"></script>
 
 <!-- Bootstrap -->
-<script src="common/bootstrap/js/bootstrap.min.js"></script>
+<script src="<%= $context %>common/bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 </html>
