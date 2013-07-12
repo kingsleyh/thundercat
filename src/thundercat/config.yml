@@ -2,4 +2,4 @@
 :username: thundercat
 :password: thundercat
 :port: 9898
-:context_root: 'http://localhost:9898/'
+:context_root: ''
