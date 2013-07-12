@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "thundercat"
-  s.version = "0.0.0"
+  s.version = "0.0.1 "
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kingsley Hendrickse"]
-  s.date = "2013-06-24"
+  s.date = "2013-07-12"
   s.description = "Easy way to deploy and monitor Rack applications as .rap archives\n"
   s.email = "kingsley@masterthought.net"
   s.executables = ["/thundercat"]
@@ -17,12 +17,14 @@ Gem::Specification.new do |s|
     "README.md"
   ]
   s.files = [
-    "integration/sinatra_app.rap",
-    "src/monitor/monitor.rb"
+    "src/rap/thundercat.rap",
+    "src/monitor/monitor.rb",
+    "src/monitor/start.sh",
+    "src/monitor/stop.sh"
   ]
   s.homepage = "https://github.com/masterthought/thundercat"
   s.licenses = ["Apache 2.0"]
-  s.require_paths = ["lib"]
+  s.require_paths = ["src"]
   s.rubygems_version = "1.8.25"
   s.summary = "Thundercat Rack deployment and monitoring"
 
@@ -32,7 +34,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<sinatra>, [">= 0"])
       s.add_runtime_dependency(%q<sinatra-formhelpers>, [">= 0"])
-      s.add_runtime_dependency(%q<sinatra-simple-auth>, [">= 0"])
+      s.add_runtime_dependency(%q<sinatra-single-user-auth>, [">= 0"])
       s.add_runtime_dependency(%q<sucker_punch>, [">= 0"])
       s.add_runtime_dependency(%q<fssm>, [">= 0"])
       s.add_runtime_dependency(%q<thin>, [">= 0"])
@@ -44,7 +46,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency(%q<sinatra>, [">= 0"])
       s.add_dependency(%q<sinatra-formhelpers>, [">= 0"])
-      s.add_dependency(%q<sinatra-simple-auth>, [">= 0"])
+      s.add_dependency(%q<ssinatra-single-user-auth>, [">= 0"])
       s.add_dependency(%q<sucker_punch>, [">= 0"])
       s.add_dependency(%q<fssm>, [">= 0"])
       s.add_dependency(%q<thin>, [">= 0"])
@@ -57,7 +59,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency(%q<sinatra>, [">= 0"])
     s.add_dependency(%q<sinatra-formhelpers>, [">= 0"])
-    s.add_dependency(%q<sinatra-simple-auth>, [">= 0"])
+    s.add_dependency(%q<sinatra-single-user-auth>, [">= 0"])
     s.add_dependency(%q<sucker_punch>, [">= 0"])
     s.add_dependency(%q<fssm>, [">= 0"])
     s.add_dependency(%q<thin>, [">= 0"])
