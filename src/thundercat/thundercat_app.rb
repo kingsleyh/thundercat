@@ -15,7 +15,7 @@ $context = config_file[:context_root]
 home_path = $context.empty? ? '/admin' : "#{$context}admin"
 context_path = $context.empty? ? '/' : $context
 
-
+set :protection, :except => [:http_origin]
 enable :sessions
 set :username, config_file[:username]
 set :password, config_file[:password]
@@ -76,7 +76,7 @@ end
 post '/upload' do
   protected!
   if params.empty?
-    redirect "#{settings.context}admin", :notice => 'ERROR You must supply a valid .rap archive!'
+    redirect settings.home, :notice => 'ERROR You must supply a valid .rap archive!'
   else
     tempfile = params['rapfile'][:tempfile]
     filename = params['rapfile'][:filename]
@@ -84,9 +84,9 @@ post '/upload' do
       File.open(File.dirname(__FILE__) + '/../' + filename, "w") do |f|
         f.write(tempfile.read)
       end
-      redirect "#{settings.context}admin", :notice => "Uploaded: #{filename}"
+      redirect settings.home, :notice => "Uploaded: #{filename}"
     else
-      redirect "#{settings.context}admin", :notice => 'ERROR You must supply a valid .rap archive!'
+      redirect settings.home, :notice => 'ERROR You must supply a valid .rap archive!'
     end
   end
 
@@ -94,7 +94,7 @@ end
 
 get '/' do
   if authorized?
-    redirect "#{settings.context}admin"
+    redirect settings.home
   else
     erb :login
   end
