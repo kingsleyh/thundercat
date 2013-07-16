@@ -76,7 +76,7 @@ end
 post '/upload' do
   protected!
   if params.empty?
-    redirect '/admin', :notice => 'ERROR You must supply a valid .rap archive!'
+    redirect "#{settings.context}admin", :notice => 'ERROR You must supply a valid .rap archive!'
   else
     tempfile = params['rapfile'][:tempfile]
     filename = params['rapfile'][:filename]
@@ -84,9 +84,9 @@ post '/upload' do
       File.open(File.dirname(__FILE__) + '/../' + filename, "w") do |f|
         f.write(tempfile.read)
       end
-      redirect '/admin', :notice => "Uploaded: #{filename}"
+      redirect "#{settings.context}admin", :notice => "Uploaded: #{filename}"
     else
-      redirect '/admin', :notice => 'ERROR You must supply a valid .rap archive!'
+      redirect "#{settings.context}admin", :notice => 'ERROR You must supply a valid .rap archive!'
     end
   end
 
@@ -94,7 +94,7 @@ end
 
 get '/' do
   if authorized?
-    redirect '/admin'
+    redirect "#{settings.context}admin"
   else
     erb :login
   end

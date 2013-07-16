@@ -10,7 +10,8 @@ class PidInfo
 
   def discover
     pids = get_pids
-    {:pid_data => get_pid_status(pids), :has_pids => has_pids?(pids)}
+    status = get_pid_status(pids)
+    {:pid_data => status, :has_pids => has_active_pids?(status)}
   end
 
   private
@@ -30,6 +31,7 @@ class PidInfo
 
   def get_pid_status(pids)
     pid_data = []
+    begin
     pids.each do |pid|
       pid_info = {}
       process = ProcTable.ps(pid.to_i)
@@ -37,6 +39,9 @@ class PidInfo
       pid_info[:port] = get_port_from_pid(process)
       pid_info[:start_time] = get_start_time(process)
       pid_data << pid_info
+    end
+    rescue => e
+      puts "[PID INFO] ERROR could not get pid info due to: #{e}"
     end
     pid_data
   end
@@ -58,7 +63,7 @@ class PidInfo
     time
   end
 
-  def has_pids?(pids)
+  def has_active_pids?(pids)
     pids.empty? ? 'no' : 'yes'
   end
 
