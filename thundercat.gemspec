@@ -44,6 +44,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<sys-proctable>, [">= 0"])
       s.add_runtime_dependency(%q<jeweler>, [">= 0"])
       s.add_runtime_dependency(%q<rappa>, [">= 0"])
+      s.add_runtime_dependency(%q<dante>, [">= 0"])
     else
       s.add_dependency(%q<sinatra>, [">= 0"])
       s.add_dependency(%q<sinatra-formhelpers>, [">= 0"])
@@ -56,7 +57,8 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<rake>, [">= 0"])
       s.add_dependency(%q<sys-proctable>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
-      s.add_runtime_dependency(%q<rappa>, [">= 0"])
+      s.add_dependency(%q<rappa>, [">= 0"])
+      s.add_dependency(%q<dante>, [">= 0"])
     end
   else
     s.add_dependency(%q<sinatra>, [">= 0"])
@@ -70,7 +72,8 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<rake>, [">= 0"])
     s.add_dependency(%q<sys-proctable>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
-    s.add_runtime_dependency(%q<rappa>, [">= 0"])
+    s.add_dependency(%q<rappa>, [">= 0"])
+    s.add_dependency(%q<dante>, [">= 0"])
   end
 end
 
