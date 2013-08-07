@@ -4,6 +4,7 @@ ThunderCat is a ruby application container for Rack based applications. It is ve
 There is a web admin panel which lets you upload a .rap archive and also see which webapps are running and start/stop/remove them.
 
 [![Build Status](https://travis-ci.org/masterthought/thundercat.png?branch=master)](https://travis-ci.org/masterthought/thundercat)
+[![thundercat Downloads](http://www.gemetric.me/images/thundercat.gif)](https://rubygems.org/gems/thundercat)
 
 ## Background
 
