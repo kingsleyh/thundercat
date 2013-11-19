@@ -55,6 +55,18 @@ This deploys a rap archive to a thundercat server e.g.
 -r is to specify your rap archive and -u is the url of the deploy api where your thundercat instance is running. -k is your api_key which is configured in your
 thundercat server.
 
+## Upgrading
+
+There is a very crude upgrade script starting from thundercat-0.0.8 - This is the process:
+
+   * stop your exising monitor using ./stop.sh
+   * copy your webapps/thundercat/config.yml somewhere safe
+   * thundercat-upgrade your_thundercat_install_folder
+   * start the monitor again using ./start.sh
+   * replace webapps/thundercat/config.yml with your original one
+   * restart monitor - ./stop.sh && ./start.sh
+   * check everything is ok
+
 ## Screenshots
 
 ### Admin Page
