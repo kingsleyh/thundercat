@@ -5,7 +5,8 @@ describe "IntegrationTests" do
 
   it 'should list all the available apps in the webapps directory' do
     webapps = File.dirname(File.expand_path(__FILE__)) + '/../integration/webapps'
-    validate_maps(WebAppStatus.new(webapps).discover, [{:pid_data => [], :has_pids => "no", :webapp => "sinatra_app_1", :location => "/Users/kings/development/projects/thundercat/spec/../integration/webapps/sinatra_app_1", :id => 0, :name => "My Sinatra App", :version => "0.0.1", :server_type => "thin", :start_script => "start.sh", :stop_script => "stop.sh", :pids => "tmp/pids", :description => "Cool App", :is_thundercat => "no"}, {:pid_data => [], :has_pids => "no", :webapp => "sinatra_app_2", :location => "/Users/kings/development/projects/thundercat/spec/../integration/webapps/sinatra_app_2", :id => 1, :name => "My Sinatra App", :version => "0.0.2", :server_type => "thin", :start_script => "start.sh", :stop_script => "stop.sh", :pids => "tmp/pids", :description => "Cool App", :is_thundercat => "no"}])
+    expected = [{:pid_data => [], :has_pids => "no", :webapp => "sinatra_app_1", :location => "/Users/kings/development/projects/thundercat/spec/../integration/webapps/sinatra_app_1", :id => 0, :name => "My Sinatra App", :version => "0.0.1", :server_type => "thin", :start_script => "start.sh", :stop_script => "stop.sh", :pids => "tmp/pids", :description => "Cool App", :is_thundercat => "no"}, {:pid_data => [], :has_pids => "no", :webapp => "sinatra_app_2", :location => "/Users/kings/development/projects/thundercat/spec/../integration/webapps/sinatra_app_2", :id => 1, :name => "My Sinatra App", :version => "0.0.2", :server_type => "thin", :start_script => "start.sh", :stop_script => "stop.sh", :pids => "tmp/pids", :description => "Cool App", :is_thundercat => "no"}]
+    validate_maps(WebAppStatus.new(webapps).discover.sort_by{|x| x[:webapp]}, expected.sort_by{|x| x[:webapp]})
   end
 
   it 'should list all the available apps in the webapps directory as json' do
