@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.date = "2013-11-19"
   s.description = "Easy way to deploy and monitor Rack applications as .rap archives\n"
   s.email = "kingsley@masterthought.net"
-  s.executables = ["/thundercat"]
+  s.executables = ["/thundercat","/thundercat-upgrade"]
   s.extra_rdoc_files = [
     "README.md"
   ]

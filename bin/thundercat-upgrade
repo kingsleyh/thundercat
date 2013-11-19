@@ -1,0 +1,38 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+
+name = ARGV[0]
+
+if name.nil? or name.empty?
+  puts '[ThunderCat] Error you must supply a target directory containing an existing thundercat installation'
+else
+
+  begin
+    target_dir = "#{name}"
+
+    rap_file = File.open(target_dir + '/webapps/thundercat/rap.yml')
+    existing_version = YAML::load(rap_file)[:version]
+
+    if existing_version < "0.0.256"
+      # create standalone and standalone_archive directories
+      FileUtils.mkpath("#{target_dir}/standalone") unless File.exists?("#{target_dir}/standalone")
+      FileUtils.mkpath("#{target_dir}/standalone_archive") unless File.exists?("#{target_dir}/standalone_archive")
+      rap = File.dirname(File.expand_path(__FILE__)) + '/../src/rap/thundercat.rap'
+      monitor = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/monitor.rb'
+
+      # remove old monitor and replace with new monitor
+      FileUtils.rm_rf("#{target_dir}/monitor.rb") if File.exists?("#{target_dir}/monitor.rb")
+      FileUtils.cp(monitor, target_dir)
+
+      # drop in new thundercat rap
+      FileUtils.cp(rap, "#{target_dir}/webapps")
+    end
+
+    puts "[ThunderCat] Successfully updated ThunderCat at: #{target_dir}"
+
+  rescue => e
+    puts "[ThunderCat] OOps something went wrong: #{e}"
+  end
+end
+
+
