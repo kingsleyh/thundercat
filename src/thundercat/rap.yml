@@ -1,6 +1,6 @@
 ---
 :name: ThunderCat
-:version: 0.0.250
+:version: 0.0.256
 :server_type: thin
 :start_script: start.sh
 :stop_script: stop.sh

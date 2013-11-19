@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "thundercat"
-  s.version = "0.0.6"
+  s.version = "0.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kingsley Hendrickse"]
-  s.date = "2013-07-12"
+  s.date = "2013-11-19"
   s.description = "Easy way to deploy and monitor Rack applications as .rap archives\n"
   s.email = "kingsley@masterthought.net"
   s.executables = ["/thundercat"]

@@ -21,6 +21,8 @@ else
       FileUtils.mkpath("#{target_dir}/webapps")
       FileUtils.mkpath("#{target_dir}/log")
       FileUtils.mkpath("#{target_dir}/archive")
+      FileUtils.mkpath("#{target_dir}/standalone")
+      FileUtils.mkpath("#{target_dir}/standalone_archive")
       FileUtils.cp(rap, "#{target_dir}/webapps")
       FileUtils.cp(monitor, target_dir)
       FileUtils.cp(start_script, target_dir)

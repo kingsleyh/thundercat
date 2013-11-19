@@ -11,7 +11,14 @@ def config_file
   YAML::load_file(settings.root + '/config.yml')
 end
 
+def version
+   rap_file = File.open(File.dirname(__FILE__) + '/rap.yml')
+   rap = YAML::load(rap_file)
+   rap[:version]
+ end
+
 $context = config_file[:context_root]
+$version = version
 home_path = $context.empty? ? '/admin' : "#{$context}admin"
 context_path = $context.empty? ? '/' : $context
 
@@ -70,6 +77,21 @@ put '/api/deploy' do
     'SUCCESS'
   else
     'ERROR You must supply a valid .rap archive!'
+  end
+end
+
+# curl -X PUT -i -F file=@standalone_folder.zip http://127.0.0.1:8089/api/standalone_deploy?key=api_key
+put '/api/standalone_deploy' do
+  error 401 unless valid_key?(params[:key])
+  tempfile = params['file'][:tempfile]
+  filename = params['file'][:filename]
+  if !filename.nil? and filename.match(/.zip$/)
+    File.open(File.dirname(__FILE__) + '/../../standalone/' + filename, "w") do |f|
+      f.write(tempfile.read)
+    end
+    'SUCCESS'
+  else
+    'ERROR You must supply a valid .zip archive!'
   end
 end
 
