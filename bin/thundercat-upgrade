@@ -32,6 +32,7 @@ else
     if existing_version > "0.0.256" and existing_version < "0.0.261"
       # create standalone new files
       rap = File.dirname(File.expand_path(__FILE__)) + '/../src/rap/thundercat.rap'
+      monitor = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/monitor.rb'
       standalone = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/standalone.rb'
       standalone_start_script = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/start_standalone.sh'
       standalone_stop_script = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/stop_standalone.sh'
