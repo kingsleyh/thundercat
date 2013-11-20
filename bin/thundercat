@@ -12,6 +12,9 @@ else
     monitor = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/monitor.rb'
     start_script = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/start.sh'
     stop_script = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/stop.sh'
+    standalone = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/standalone.rb'
+    standalone_start_script = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/start_standalone.sh'
+    standalone_stop_script = File.dirname(File.expand_path(__FILE__)) + '/../src/monitor/stop_standalone.sh'
 
     target_dir = "#{name}"
     if File.exists?(target_dir)
@@ -27,6 +30,9 @@ else
       FileUtils.cp(monitor, target_dir)
       FileUtils.cp(start_script, target_dir)
       FileUtils.cp(stop_script, target_dir)
+      FileUtils.cp(standalone, target_dir)
+      FileUtils.cp(standalone_start_script, target_dir)
+      FileUtils.cp(standalone_stop_script, target_dir)
       puts "[ThunderCat] Successfully created ThunderCat structure at: #{target_dir}"
     end
   rescue => e

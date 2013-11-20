@@ -5,22 +5,25 @@
 
 Gem::Specification.new do |s|
   s.name = "thundercat"
-  s.version = "0.0.8"
+  s.version = "0.0.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kingsley Hendrickse"]
-  s.date = "2013-11-19"
+  s.date = "2013-11-20"
   s.description = "Easy way to deploy and monitor Rack applications as .rap archives\n"
   s.email = "kingsley@masterthought.net"
-  s.executables = ["/thundercat","/thundercat-upgrade"]
+  s.executables = ["/thundercat", "/thundercat-upgrade"]
   s.extra_rdoc_files = [
-    "README.md"
+      "README.md"
   ]
   s.files = [
-    "src/rap/thundercat.rap",
-    "src/monitor/monitor.rb",
-    "src/monitor/start.sh",
-    "src/monitor/stop.sh"
+      "src/rap/thundercat.rap",
+      "src/monitor/monitor.rb",
+      "src/monitor/start.sh",
+      "src/monitor/stop.sh",
+      "src/monitor/standalone.rb",
+      "src/monitor/start_standalone.sh",
+      "src/monitor/stop_standalone.sh"
   ]
   s.homepage = "https://github.com/masterthought/thundercat"
   s.licenses = ["Apache 2.0"]
