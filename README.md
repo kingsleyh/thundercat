@@ -1,3 +1,5 @@
+# PLEASE NOTE - This project is not being actively maintained at the moment - I am taking a break - not sure when I will return.
+
 # Deploy & Monitor RAP Packaged Rack Applications
 
 ThunderCat is a ruby application container for Rack based applications. It is very similar in concept to war files and Tomcat. When you drop a .rap file into ThunderCats webapps directory it will auto expand and start the webapp.
